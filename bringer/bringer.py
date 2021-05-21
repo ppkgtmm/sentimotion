@@ -1,5 +1,6 @@
 from requests import post
 from pymongo import MongoClient
+from datetime import datetime
 import json
 
 fp = open('../cleaned-msg.json', 'r')
@@ -27,7 +28,7 @@ for (p, message) in zip(predictions, data["message"]):
     final_object.append({
         "polarity": p["polarity"],
         "emotion": p["emotion"],
-        "created": message["created"],
+        "created": datetime.strptime(message["created"], '%Y-%m-%dT%H:%M:%S.%f%z'),
         "space_id": message["space_id"],
         "message_id": message["message_id"],
     })
