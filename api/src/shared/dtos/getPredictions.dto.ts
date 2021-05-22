@@ -6,5 +6,5 @@ export class GetPredictionsDto {
     message: `should be one of ${Object.values(TimeRange).join(', ')}`,
   })
   @IsNotEmpty()
-  readonly time_range: string;
+  readonly time_range: TimeRange;
 }
