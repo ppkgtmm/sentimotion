@@ -3,7 +3,7 @@ venv/
 dist/
 
 *msg.json
-.env
+**/.env
 query.txt
 
 # Logs

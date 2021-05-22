@@ -17,6 +17,9 @@ export class Prediction {
 
   @Prop({ required: true })
   emotion: Emotion;
+
+  @Prop({ required: true })
+  created: Date;
 }
 
 export const PredictionSchema = SchemaFactory.createForClass(Prediction);
