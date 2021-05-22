@@ -1,13 +1,10 @@
 node_modules/
 venv/
+dist/
 
 *msg.json
 .env
 query.txt
-
-# compiled output
-/dist
-/node_modules
 
 # Logs
 logs
