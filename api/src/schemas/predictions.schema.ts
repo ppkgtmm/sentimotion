@@ -1,11 +1,11 @@
 import { Document, Types } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Emotion, Polarity } from '../shared/enums';
+import { Emotion, Polarity } from '../shared';
 
-export type PredictionDocument = Prediction & Document;
+export type PredictionDocument = Predictions & Document;
 
 @Schema()
-export class Prediction {
+export class Predictions {
   @Prop({ required: true, type: Types.ObjectId })
   space_id: string;
 
@@ -22,4 +22,4 @@ export class Prediction {
   created: Date;
 }
 
-export const PredictionSchema = SchemaFactory.createForClass(Prediction);
+export const PredictionSchema = SchemaFactory.createForClass(Predictions);
