@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { GetPredictionsDto } from '../shared/dtos/getPredictions.dto';
+import { GetPredictionsDto } from '../shared';
 import { PredictionsService } from './predictions.service';
 
 @Controller('predictions')

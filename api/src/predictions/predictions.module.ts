@@ -2,12 +2,12 @@ import { Module } from '@nestjs/common';
 import { PredictionsController } from './predictions.controller';
 import { PredictionsService } from './predictions.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { Prediction, PredictionSchema } from '../schemas/predictions.schema';
+import { Predictions, PredictionSchema } from '../schemas/predictions.schema';
 
 @Module({
   imports: [
     MongooseModule.forFeature([
-      { name: Prediction.name, schema: PredictionSchema },
+      { name: Predictions.name, schema: PredictionSchema },
     ]),
   ],
   controllers: [PredictionsController],
