@@ -1,5 +1,3 @@
-import exp from 'constants';
-
 export enum Polarity {
   POSITIVE = 'positive',
   NEGATIVE = 'negative',
