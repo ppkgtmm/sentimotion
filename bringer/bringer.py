@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from datetime import datetime
 import json
 
-fp = open('../cleaned-msg.json', 'r')
+fp = open('../cleaned-msg2.json', 'r')
 data = json.load(fp)
 fp.close()
 
