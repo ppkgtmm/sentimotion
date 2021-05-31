@@ -18,4 +18,5 @@ export enum TimeRange {
   LAST_3MONTH = 'last_3_month',
   LAST_6MONTH = 'last_6_month',
   LAST_YEAR = 'last_year',
+  ALL_TIME = 'all_time',
 }

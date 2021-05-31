@@ -108,7 +108,17 @@ export class PredictionsService {
       .exec();
   }
 
-  async getLastNMonthPredictions(n: number) {
+  async getLastNMonthPredictions(n: number, allTime = false) {
+    const query = [
+      {
+        $group: {
+          ...PredictionsService.getGroupbyMonthsQuery(),
+          ...PredictionsService.getAggregateQuery(),
+        },
+      },
+      { $sort: { _id: 1 } },
+    ];
+    if (allTime) return await this.predictionModel.aggregate(query).exec();
     const now = new Date(Date.now());
     const start = new Date(now);
     const monthDiff = start.getMonth() - n;
@@ -119,16 +129,7 @@ export class PredictionsService {
     )
       start.setDate(0);
     return await this.predictionModel
-      .aggregate([
-        PredictionsService.getTimeRangeQuery(start, now),
-        {
-          $group: {
-            ...PredictionsService.getGroupbyMonthsQuery(),
-            ...PredictionsService.getAggregateQuery(),
-          },
-        },
-        { $sort: { _id: 1 } },
-      ])
+      .aggregate([PredictionsService.getTimeRangeQuery(start, now), ...query])
       .exec();
   }
 
@@ -141,8 +142,10 @@ export class PredictionsService {
       return await this.getLastNMonthPredictions(3);
     } else if (timeRange === TimeRange.LAST_6MONTH) {
       return await this.getLastNMonthPredictions(6);
-    } else {
+    } else if (timeRange === TimeRange.LAST_YEAR) {
       return await this.getLastNMonthPredictions(12);
+    } else {
+      return await this.getLastNMonthPredictions(12, true);
     }
   }
 }
