@@ -2,7 +2,7 @@ node_modules/
 venv/
 dist/
 
-*msg.json
+*msg*.json
 **/.env
 query.txt
 
