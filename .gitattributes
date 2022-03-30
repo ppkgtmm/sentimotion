@@ -1,1 +1,1 @@
-tools/* linguist-vendored=false
+api/** linguist-vendored=true
