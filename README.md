@@ -16,7 +16,7 @@
 - [bringer](https://github.com/ppkgtmm/sentimotion/tree/main/bringer) and [clean script](https://github.com/ppkgtmm/sentimotion/blob/main/clean.js) contain code that help do ETL with process illustrated above
 
 ## Improvements
-- During the ETL, workspace messages can be processed in batches then sent for prediction and saved in one go
+- During the ETL, messages can be processed in batches, sent for prediction and saved in one go
 - Deployment of this project could help in analyzing overall communication tone within workspace
 
 
