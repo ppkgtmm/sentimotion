@@ -30,5 +30,5 @@
 
 ## Improvements
 
-- During the ETL, messages can be processed, sent for prediction and saved in batches without some of manual work
+- During the ETL, messages can be processed, sent for prediction and saved in batches without manual work
 - Deployment of this project could help in analyzing overall communication tone within workspace
